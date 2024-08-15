@@ -3,9 +3,8 @@ body {
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
-    height: 100vh;
     display: flex;
-    flex-direction: column;
+    height: 100vh;
     overflow: hidden;
 }
 
@@ -20,7 +19,6 @@ body {
     transition: left 0.3s ease;
     z-index: 1000;
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
-    overflow-y: auto;
 }
 
 .sidebar-header {
@@ -73,19 +71,11 @@ body {
 }
 
 .buttons__burger {
-    --size: 3rem;
-    --clr: #2980b9;
-    width: var(--size);
-    height: calc(0.7 * var(--size));
+    width: 3rem;
+    height: 2.1rem;
     cursor: pointer;
     position: relative;
     display: block;
-}
-
-.buttons__burger #burger {
-    display: none;
-    width: 100%;
-    height: 100%;
 }
 
 .buttons__burger span {
@@ -93,8 +83,8 @@ body {
     position: absolute;
     width: 100%;
     border-radius: 0.5rem;
-    border: 3px solid var(--clr);
-    background-color: var(--clr);
+    border: 3px solid #2980b9;
+    background-color: #2980b9;
     transition: 0.15s ease-in-out;
 }
 
@@ -153,24 +143,27 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow-y: auto;
+    height: 100vh;
+    overflow-y: scroll;
 }
 
-.card {
+.chapter1-style .card {
+    display: block;
+    position: relative;
+    max-width: 600px;
     background-color: #f2f8f9;
     border-radius: 10px;
     padding: 2em 1.2em;
-    max-width: 600px;
-    width: 100%;
-    margin: auto;
-    text-align: left;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    position: relative;
+    margin: 12px;
+    text-decoration: none;
+    z-index: 0;
     overflow: hidden;
     background: linear-gradient(to bottom, #c3e6ec, #a7d1d9);
+    font-family: 'Roboto', sans-serif;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.card-title {
+.chapter1-style .card-title {
     color: #262626;
     font-size: 1.5em;
     line-height: normal;
@@ -178,45 +171,19 @@ body {
     margin-bottom: 0.5em;
 }
 
-.small-desc {
+.chapter1-style .small-desc {
     font-size: 1em;
     font-weight: 400;
     line-height: 1.5em;
     color: #452c2c;
 }
 
-.card img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px;
-    margin-top: 1em;
-}
-
-.card:before {
-    content: '';
-    position: absolute;
-    z-index: -1;
-    top: -16px;
-    right: -16px;
-    background: linear-gradient(135deg, #364a60, #384c6c);
-    height: 32px;
-    width: 32px;
-    border-radius: 32px;
-    transform: scale(1);
-    transform-origin: 50% 50%;
-    transition: transform 0.35s ease-out;
-}
-
-.card:hover:before {
-    transform: scale(28);
-}
-
-.card:hover .small-desc {
+.chapter1-style .card:hover .small-desc {
     transition: all 0.5s ease-out;
     color: rgba(255, 255, 255, 0.8);
 }
 
-.card:hover .card-title {
+.chapter1-style .card:hover .card-title {
     transition: all 0.5s ease-out;
     color: #ffffff;
 }
